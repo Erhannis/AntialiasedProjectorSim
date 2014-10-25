@@ -1,0 +1,1 @@
+If you took a projector, made it vibrate, then resampled pixels from a high-res image in a manner that counteracted the vibrating, I think you end up seeing a higher resolution image than the projector can technically project.  This simulation demonstrates that.
