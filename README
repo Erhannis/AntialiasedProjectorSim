@@ -1,5 +1,7 @@
 If you took a projector, made it vibrate, then resampled pixels from a high-res image in a manner that counteracted the vibrating and then fed them to the projector, I think you'd end up seeing a higher resolution image than the projector can technically project.  This simulation demonstrates that.
 
+Note that ss.png must be accessible to the program.
+
 This depends on my MathNStuff library.
 
 I'm releasing this under the Apache License 2.0.
