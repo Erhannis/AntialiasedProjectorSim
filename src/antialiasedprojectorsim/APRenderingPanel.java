@@ -53,6 +53,7 @@ public class APRenderingPanel extends javax.swing.JPanel {
     }
 
     public boolean paused = false;
+    public boolean pointSample = false;
     
     @Override
     protected void paintComponent(Graphics g2) {
@@ -81,11 +82,12 @@ public class APRenderingPanel extends javax.swing.JPanel {
         long start = System.currentTimeMillis();
         double[] offset = new double[] {0, 0};
         double[] size = new double[] {3, 3};
+        double[] size2 = new double[] {1, 1};
         for (double y = 0; y < defArea[1]; y += size[1]) {
             for (double x = 0; x < defArea[0]; x += size[0]) {
-                offset[0] = defTL[0] + x;
-                offset[1] = defTL[1] + y;
-                g.setColor(input.getRegionColor(offset, size));
+                offset[0] = defTL[0] + x + (pointSample ? 1:0);
+                offset[1] = defTL[1] + y + (pointSample ? 1:0);
+                g.setColor(input.getRegionColor(offset, (pointSample ? size2:size)));
                 g.fillRect((int)(x + displayOffset[0]), (int)(y + displayOffset[1]),
                         (int)(x + displayOffset[0] + size[0]) - (int)(x + displayOffset[0]),
                         (int)(y + displayOffset[1] + size[1]) - (int)(y + displayOffset[1]));
